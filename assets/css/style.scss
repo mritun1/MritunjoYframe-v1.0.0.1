@@ -1,0 +1,478 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.5s;
+}
+a {
+  text-decoration: none;
+}
+button {
+  border: none;
+  padding: 5px 8px;
+  margin: 5px 8px;
+}
+
+@mixin box_property {
+  box-shadow: 0px 2px 20px #e8edf6;
+  background-color: $white;
+  transition: all 0.5s;
+}
+@mixin box_v_center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin pag-btn {
+  background-color: rgb(99, 99, 196);
+  color: $white;
+  border-radius: 6px;
+  &:hover {
+    background-color: rgb(171, 171, 238);
+  }
+}
+
+$white: #ffffff;
+$light: rgb(156, 140, 140);
+
+$head-height: 60px;
+
+button,
+.fa-solid {
+  cursor: pointer;
+}
+
+.container-xs {
+  width: 60%;
+}
+.container-md {
+  width: 70%;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .container-xs,
+  .container-md,
+  .container-lg {
+    width: 100%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+// @media only screen and (min-width: 600px) {
+// }
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .container-lg {
+    width: 100%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .container-lg {
+    width: 100%;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .container-lg {
+    width: 80%;
+  }
+}
+
+$warning_bg: #fff3cd;
+
+$warning_color: #9b894d;
+
+$border_light: 1px solid rgb(235, 222, 222);
+
+.text-light {
+  color: $light;
+}
+.text-warning {
+  color: $warning_color;
+}
+.text-danger {
+  color: rgb(194, 72, 72);
+}
+// .text-light, .text-warning
+
+.warning-bg {
+  background-color: $warning_bg;
+}
+// .warning-bg
+
+.font-xs {
+  font-size: 13px;
+}
+// .font-xs
+.align_center {
+  text-align: center;
+}
+.align_right {
+  text-align: right;
+}
+// .align_right .align_center
+
+.cursor_pointer {
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  align-items: stretch;
+}
+.flex-basis {
+  div {
+    flex-basis: 100%;
+  }
+}
+// <div class="flex flex-basis">
+//     <div><div>
+//     <div><div>
+// </div>
+
+.vertical-menu {
+  list-style: none;
+  margin: 10px 20px;
+  li {
+    padding: 5px;
+    a {
+      color: #012970;
+      font-size: 15px;
+      &:hover {
+        color: #4159f1;
+      }
+    }
+    i {
+      margin-right: 6px;
+    }
+  }
+}
+// <ul class="vertical-menu">
+//     <li><a href="#"><i class="fa-solid fa-gear"></i> First menu</a></li>
+//     <li><a href="#"><i class="fa-solid fa-gear"></i> Second menu</a></li>
+// </ul>
+
+.no_content_found {
+  height: 300px;
+  background-color: $white;
+  @include box_v_center();
+  justify-content: center;
+  div {
+    text-align: center;
+    i {
+      font-size: 60px;
+      color: rgb(214, 57, 57);
+    }
+  }
+}
+// <div class="no_content_found">
+//     <div>
+//         <i class="fa-solid fa-triangle-exclamation"></i>
+//         <h2>Not Found</h2>
+//         <p>Sorry! No content found</p>
+//     </div>
+// </div>
+
+.input_box {
+  margin: 12px 0;
+  label {
+    padding: 5px;
+    color: $light;
+  }
+  input,
+  textarea {
+    width: 100%;
+    border: none;
+    background-color: rgb(232, 235, 235);
+    padding: 8px;
+    border-radius: 6px;
+    &:focus {
+      outline: 1px solid rgb(226, 223, 223);
+    }
+  }
+}
+// <div class="input_box">
+//     <label>Password</label>
+//     <input type="password" name="password" placeholder="Password" />
+// </div>
+
+@mixin btn {
+  padding: 4px 6px;
+  border-radius: 6px;
+}
+
+.btn_md {
+  font-size: 16px;
+  @include btn();
+}
+
+.btn_xs {
+  font-size: 13px;
+  @include btn();
+}
+
+.btn_success {
+  background-color: rgb(30, 148, 30);
+  color: $white;
+
+  &:hover {
+    background-color: rgb(37, 187, 37);
+    box-shadow: 3px 2px 3px rgb(169, 207, 169);
+  }
+}
+
+.btn_warning {
+  background-color: rgb(243, 165, 19);
+  color: $white;
+
+  &:hover {
+    background-color: rgb(245, 193, 96);
+    box-shadow: 3px 2px 3px rgb(247, 200, 115);
+  }
+}
+
+.btn_danger {
+  background-color: rgb(231, 40, 40);
+  color: $white !important;
+
+  &:hover {
+    background-color: rgb(230, 124, 124);
+    box-shadow: 3px 2px 3px rgb(182, 59, 59);
+  }
+}
+// <button class="btn_md btn_success">Submit</button>
+// <button class="btn_md btn_warning">Submit</button>
+// <button class="btn_md btn_danger">Submit</button>
+
+.search_box {
+  margin: 18px 5px;
+  border-radius: 8px;
+  border: 1px solid rgb(230, 224, 224);
+  div:nth-child(1) {
+    flex: 9;
+    //border:none;
+    @include box_v_center();
+    display: flex;
+    border-radius: 8px 0 0 8px;
+    form {
+      width: 100%;
+      border: none;
+      input {
+        width: 100%;
+        border: none;
+        padding: 8px;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+  div:nth-child(2) {
+    flex: 1;
+    border-left: 1px solid rgb(230, 224, 224);
+    @include box_v_center();
+    justify-content: center;
+    &:hover {
+      background-color: #d3d8df;
+      cursor: pointer;
+      font {
+        color: $white;
+      }
+    }
+    font {
+      color: #d3d8df;
+      font-size: 16px;
+    }
+  }
+}
+// <div class="search_box flex" style="width:100%;" >
+//     <div>
+//         <form id="searchForm" method="post" action="/asking/<?php echo $id; ?>">
+//             <input type="text" name="title" placeholder="Search Problems..." id="search" />
+//         </form>
+//     </div>
+//     <div class="searchBtn" style="flex:2;">
+//         <font style="color:#9b894d;font-size:14px;"><i class="fa-solid fa-plus"></i> Add</font>
+//     </div>
+// </div>
+
+.alert {
+  padding: 4px;
+  border-radius: 6px;
+  margin: 3px 5px;
+  div {
+    overflow: auto;
+
+    p {
+      float: left;
+      font-size: 13px;
+      width: 90%;
+    }
+    a {
+      float: right;
+      color: rgb(46, 43, 43);
+      padding-right: 5px;
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
+.alert-danger {
+  background-color: #f8d7da;
+  border: 1px solid #ecb6b6;
+  color: #b83d2f;
+}
+.alert-success {
+  background-color: #d1e7dd;
+  border: 1px solid #b0dac7;
+  color: #57997b;
+}
+.alert-warning {
+  background-color: $warning_bg;
+  border: 1px solid #d8c998;
+  color: $warning_color;
+}
+// <div class="alert alert-danger">
+//     <div>
+//     <a href="javascript:void(0)" class="close-alert"><i class="fa-solid fa-xmark"></i></a>
+//     <p>Alert! This is the alert message. Alert! This is the alert message. Alert! This is the alert message.</p>
+//     </div>
+// </div>
+
+.textEditor {
+  margin: 10px 5px;
+  .tools {
+    border: $border_light;
+    padding: 8px;
+    border-radius: 6px;
+  }
+  .editor {
+    border: $border_light;
+    padding: 5px 15px;
+    margin-top: 8px;
+    height: 30vh;
+    overflow: auto;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+// <div id="container" class="textEditor" >
+//     <div class="tools">
+//         <button class="fontStyle italic" onclick="document.execCommand('italic',false,null);" title="Italicize Highlighted Text"><i class="fa-solid fa-italic"></i></button>
+//         <button class="fontStyle bold" onclick="document.execCommand( 'bold',false,null);" title="Bold Highlighted Text"><i class="fa-solid fa-bold"></i></button>
+//         <button class="fontStyle underline" onclick="document.execCommand( 'underline',false,null);"><i class="fa-solid fa-underline"></i></button>
+//         <select id="input-font" class="input"  onchange="changeFont (this);">
+//             <option value="Arial">Arial</option>
+//             <option value="Helvetica">Helvetica</option>
+//             <option value="Times New Roman">Times New Roman</option>
+//             <option value="Sans serif">Sans serif</option>
+//             <option value="Courier New">Courier New</option>
+//             <option value="Verdana">Verdana</option>
+//             <option value="Georgia">Georgia</option>
+//             <option value="Palatino">Palatino</option>
+//             <option value="Garamond">Garamond</option>
+//             <option value="Comic Sans MS">Comic Sans MS</option>
+//             <option value="Arial Black">Arial Black</option>
+//             <option value="Tahoma">Tahoma</option>
+//             <option value="Comic Sans MS">Comic Sans MS</option>
+//         </select>
+//         <button class="fontStyle strikethrough" onclick="document.execCommand( 'strikethrough',false,null);"> <i class="fas fa-remove-format"></i></button>
+//         <button class="fontStyle align-left" onclick="document.execCommand( 'justifyLeft',false,null);"><i class="fas fa-align-left"></i> </button>
+//         <button class="fontStyle align-center" onclick="document.execCommand( 'justifyCenter',false,null);"> <i class='fas fa-align-justify'></i></button>
+//         <button class="fontStyle align-right" onclick="document.execCommand( 'justifyRight',false,null);"> <i class='fas fa-align-right'></i></button>
+//         <button class="fontStyle redo-apply" onclick="document.execCommand( 'redo',false,null);"> <i class='fas fa-redo'></i></button>
+//         <button class="fontStyle undo-apply" onclick="document.execCommand( 'undo',false,null);"> <i class='fas fa-undo'></i></button>
+//         <button class="fontStyle orderedlist" onclick="document.execCommand('insertOrderedList', false, null);"> <i class='fas fa-list-ol'></i></button>
+//         <button class="fontStyle unorderedlist" onclick="document.execCommand('insertUnorderedList',false, null)"> <i class='fas fa-list'></i></button>
+//         <input class="color-apply" type="color" onchange="chooseColor()" id="myColor">
+
+//         <!-- font size start -->
+//         <select id="fontSize" onclick="changeSize()">
+//             <option value="1">1</option>
+//             <option value="2">2</option>
+//             <option value="3">3</option>
+//             <option value="4">4</option>
+//             <option value="5">5</option>
+//             <option value="6">6</option>
+//             <option value="7">7</option>
+//             <option value="8">8</option>
+//         </select>
+//         <!-- font size end -->
+//     </div>
+
+//     <div class="editor" id="editor1" contenteditable="true" data-placeholder="Explain your problems here..."></div>
+
+// </div>
+
+.modal {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+  .modal-xs {
+    //width: 40%;
+    @media only screen and (max-width: 600px) {
+      width: 98%;
+    }
+    @media only screen and (min-width: 600px) {
+      width: 80%;
+    }
+    @media only screen and (min-width: 900px) {
+      width: 60%;
+    }
+    @media only screen and (min-width: 1200px) {
+      width: 40%;
+    }
+  }
+  .modal-section {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    div {
+      background-color: $white;
+      .modal-head {
+        .modal-close {
+          float: right;
+          background-color: rgb(124, 99, 99);
+          border-radius: 40%;
+          color: $white;
+          &:hover {
+            background-color: rgb(204, 134, 134);
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}
+// <div id="addDocs" class="modal">
+//     <div class="modal-section">
+//         <div class="modal-xs">
+
+//             <div class="modal-head">
+//                 <button class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+//             </div>
+//             <div class="modal-content">
+//                 <h1>MODAL CONTENT HERE</h1>
+//             </div>
+//             <div class="modal-foot">
+
+//             </div>
+
+//         </div>
+//     </div>
+// </div>
